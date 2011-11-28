@@ -63,14 +63,14 @@ CANTERA_CONFIG_PREFIX=${CANTERA_CONFIG_PREFIX:=""}
 #    default   try to do a full installation, but fall back to a minimal
 #              one in case of errors
 
-PYTHON_PACKAGE=${PYTHON_PACKAGE:="minimal"}
+PYTHON_PACKAGE=${PYTHON_PACKAGE:="full"}
 
 # Cantera needs to know where to find the Python interpreter.  If
 # PYTHON_CMD is set to "default", then the configuration process will
 # look for the Python Interpreter somewhere on your PATH, either as
 # 'python2' or as 'python'.  If it is not on the PATH, or has a
 # different name, set this to the full path to the Python interpreter.
-PYTHON_CMD=${PYTHON_CMD:="default"}
+PYTHON_CMD=${PYTHON_CMD:="/usr/local/EPD/bin/python"}
 
 
 # The Cantera Python interface can be built with either the numarray
@@ -81,7 +81,7 @@ USE_NUMERIC=${USE_NUMERIC:="n"}
 # or Numeric packages. Set this to "y" to use numpy, or 'n'
 # to use numarray. set USE_NUMERIC to 'n' also if you want to use numarray.
 # Using numpy is preferred, and is the supported option going forwards.
-USE_NUMPY=${USE_NUMPY:="n"}
+USE_NUMPY=${USE_NUMPY:="y"}
 
 # If numpy was installed using the --home option, set this to the
 # home directory for numpy. This will be needed for all numpy installations

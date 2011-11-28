@@ -1,0 +1,31 @@
+Installation: 
+
+Follow instructions from
+http://stackoverflow.com/questions/8175393/trouble-compiling-and-installing-cantera-python-module
+
+    First step is to install any dependencies. This is handled by
+    apt-get: sudo apt-get install subversion g++ gfortran
+    python2.6-dev python-numpy libsundials* graphviz
+
+    Next step is to get the source for cantera. This can be done by
+    either downloading the cantera-1.8.0-beta-tar.gz from the cantera
+    site our checking the latest version from svn 
+svn checkout http://cantera.googlecode.com/svn/cantera18/trunk/ cantera
+
+    Change to the cantera directory (either the svn checkout or the untarred/gunzipped cantera-1.8.0)
+
+    Edit the file named preconfig and make sure the following lines are included by commenting/editing
+    PYTHON_PACKAGE=${PYTHON_PACKAGE:="full"}
+    USE_NUMPY=${USE_NUMPY:="y"}
+    PYTHON_CMD=${PYTHON_CMD:="/usr/local/EPD/bin/python"}
+
+Then in a terminal run the following commands:
+./preconfig
+make
+sudo make install
+source ~/setup_cantera
+
+If every thing went well you should be able to import the Cantera module in python:
+python
+>>>from Cantera import *
+
