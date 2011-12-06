@@ -83,6 +83,10 @@ USE_NUMERIC=${USE_NUMERIC:="n"}
 # Using numpy is preferred, and is the supported option going forwards.
 USE_NUMPY=${USE_NUMPY:="y"}
 
+if [ "$USE_NUMPY" = "y" ]; then
+    export NUMPY_INC_DIR=`python -c 'import numpy; print numpy.get_include()'`
+fi
+
 # If numpy was installed using the --home option, set this to the
 # home directory for numpy. This will be needed for all numpy installations
 # that don't put the include files into python's native include directory.
